@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  {% extends 'base.html' %}
+
+  {% block body %}
+    
+    <form class="row g-4" action="/test" {{ url_for('test')}} method="POST">
+
+      <div class="col-md-3 mx-3">
+        
+        <label for="truckno" class="form-label me-auto my-3">Truck Number</label>
+        
+          <input type="text" class="form-control border border-info" name="truckno" id="truckno" required> 
+      </div>
+      <div class="col-md-3">
+        <label for="fromm" class="form-label me-auto my-3">From</label>
+          <input type="text" class="form-control border border-info" name="fromm"id="fromm" required>
+      </div>
+      <div class="col-md-3">
+        <label for="to" class="form-label me-auto my-3">To</label>
+          <input type="text" class="form-control border border-info" name="to" id="to" required>
+      </div>
+      <div class="col-md-3 mx-3">
+        <label for="amt" class="form-label me-auto my-3">Amount</label>
+          <input type="number" class="form-control border border-info" name="amt" id="amt" required>
+      </div>
+      <div class="col-md-3">
+        <label for="adv" class="form-label me-auto my-3" >Advance</label>
+          <input type="number" class="form-control border border-info" name="adv" id="adv" required >
+        
+      </div>
+      <div class="col-md-3">
+        <label for="weight" class="form-label me-auto my-3">Weight</label>
+        <input type="number" class="form-control border border-info" name="weight" id="weight" required>
+      </div>
+      
+      </div>
+      <div class="col-12">
+        <button class="btn btn-dark d-grid gap-2 col-3 mx-auto my-3" type="submit" name="submit" value="submit">Submit</button>
+  
+      </div>
+      
+    </form>
+
+        <div class="d-grid gap-2 col-6 mx-auto my-6">
+          <form class="container d-grid gap-2 col-6 my-6 mx-auto" action="/searchs " {{ url_for ('test')}} method="POST">
+
+            <button class="btn btn-success d-grid gap-2 col-6 mx-auto" type="submit" name="search" value="search" >Search</button>
+          
+          </form>
+          
+        </div>
+
+  <div class="container my-4 row justify-content-justify">
+    <h3>ENTRIES</h3>  
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Sl.No.</th>
+          <th scope="col">DATE</th>
+          <th scope="col">TRUCK NO.</th>
+          <th scope="col">FROM</th>
+          <th scope="col">TO</th>
+          <th scope="col">AMOUNT</th>
+          <th scope="col">ADVANCE</th>
+          <th scope="col">BALANCE</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        {% for entries in allentries %}
+        <tr>
+          <th scope="row">{{loop.index}}</th>
+          <td>{{entries.date_created}}</td>
+          <td>{{entries.truckno}}</td>
+          <td>{{entries.fromm}}</td>
+          <td>{{entries.to}}</td>
+          <td>{{entries.amt}}</td>
+          <td>{{entries.adv}}</td>
+          <td>{{entries.bal}}</td>
+          <td>
+            <a href="/update/{{entries.sno}}" type="button" class="btn btn-success btn-sm mx-1">Update</button>
+            
+          
+          </td>
+        </tr>
+        {% endfor %}
+       
+       
+      </tbody>
+    </table>
+  </div>
+  {% endblock body %}

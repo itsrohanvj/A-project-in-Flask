@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<div class="d-grid gap-2 col-10 mx-auto my-6">
+    <form class="container d-grid gap-2 col-6 my-6 mx-auto" action="/searchs " method="POST">
+
+      <input type="text" class="form-control border border-info" name="search" value="" id="search" required >
+      
+      <button class="btn btn-secondary d-grid gap-2 col-6 mx-auto my-3" type="submit" name="search"  >Search</button>
+    
+    </form>
+    
+<div class="d-grid gap-2 col-3 mx-auto ">
+ 
+    <button class="btn btn-danger d-grid gap-2 col-6 mx-auto" type="submit" name="back" onclick="location.href='/test';" >Back</button>
+
+  </div>
+<div class="container my-5">
+    <h3>SEARCH RESULTS</h3>  
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Sl.No.</th>
+          <th scope="col">DATE</th>
+          <th scope="col">TRUCK NO.</th>
+          <th scope="col">FROM</th>
+          <th scope="col">TO</th>
+          <th scope="col">AMOUNT</th>
+          <th scope="col">ADVANCE</th>
+          <th scope="col">BALANCE</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        {% for entries in allentries %}
+        <tr>
+          <th scope="row">{{loop.index}}</th>
+          <td>{{entries.date_created}}</td>
+          <td>{{entries.truckno}}</td>
+          <td>{{entries.fromm}}</td>
+          <td>{{entries.to}}</td>
+          <td>{{entries.amt}}</td>
+          <td>{{entries.adv}}</td>
+          <td>{{entries.bal}}</td>
+  
+        </tr>
+        {% endfor %}
+       
+      </tbody>
+    </table>
+  </div>
+  {% endblock body %}
