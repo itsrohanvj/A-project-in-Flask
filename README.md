@@ -9,4 +9,4 @@ searchs.html- Searching of entries is implemented in this page. <br>
 Python, Flask, SQLAlchemy, Jinja2. HTML are used in this project. 
 <br>
 
-### Note: HTML templates used are sourced from http://getbootstrap.com/
+##### Note: HTML templates used are sourced from http://getbootstrap.com/
