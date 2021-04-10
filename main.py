@@ -103,8 +103,7 @@ def party():
 def test():
     
     if request.method=='POST':
-       # submit=""
-     #   search=""
+       
         if request.form['submit']=='submit':
             date_created=request.form['date_created']
             truckno=request.form['truckno']
