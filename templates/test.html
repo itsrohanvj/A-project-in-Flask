@@ -3,37 +3,63 @@
   {% extends 'base.html' %}
 
   {% block body %}
-    
+  <meta http-equiv='cache-control' content='no-cache'>
+  <meta http-equiv='expires' content='0'>
+  <meta http-equiv='pragma' content='no-cache'>
+  <script>
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+  </script>
+  
     <form class="row g-4" action="/test" {{ url_for('test')}} method="POST">
 
-      <div class="col-md-3 mx-3">
+      <div class="col-md-3 mx-4">
+        
+        <label for="date" class="form-label me-auto my-3">Date</label>
+        
+          <input type="date" class="form-control border border-info" name="date_created" id="date_created" required> 
+      </div>
+
+      <div class="col-md-3 mx-4">
         
         <label for="truckno" class="form-label me-auto my-3">Truck Number</label>
         
           <input type="text" class="form-control border border-info" name="truckno" id="truckno" required> 
       </div>
+
       <div class="col-md-3">
-        <label for="fromm" class="form-label me-auto my-3">From</label>
-          <input type="text" class="form-control border border-info" name="fromm"id="fromm" required>
-      </div>
-      <div class="col-md-3">
-        <label for="to" class="form-label me-auto my-3">To</label>
-          <input type="text" class="form-control border border-info" name="to" id="to" required>
-      </div>
-      <div class="col-md-3 mx-3">
-        <label for="amt" class="form-label me-auto my-3">Amount</label>
-          <input type="number" class="form-control border border-info" name="amt" id="amt" required>
-      </div>
-      <div class="col-md-3">
-        <label for="adv" class="form-label me-auto my-3" >Advance</label>
-          <input type="number" class="form-control border border-info" name="adv" id="adv" required >
-        
-      </div>
-      <div class="col-md-3">
-        <label for="weight" class="form-label me-auto my-3">Weight</label>
-        <input type="number" class="form-control border border-info" name="weight" id="weight" required>
+        <label  class="form-label me-auto my-3">C. Weight</label>
+          <input type="number" step="0.001" min="0" max="1000000000" class="form-control border border-info" name="cweight"id="cweight" required>
       </div>
       
+      <div class="col-md-3 mx-4">
+        <label  class="form-label me-auto my-3">R. Weight</label>
+          <input type="number" step="0.001" min="0" max="1000000000" class="form-control border border-info" name="rweight"id="rweight" required>
+      </div>
+      
+      <div class="col-md-3 mx-4">
+        <label  class="form-label me-auto my-3">Rate</label>
+          <input type="number" step="0.001" min="0" max="1000000000" class="form-control border border-info" name="rate"id="rate" required>
+      </div>
+      
+      <div class="col-md-3">
+        <label  class="form-label me-auto my-3">Advance</label>
+          <input type="number" step="0.001" min="0" max="1000000000" step="0.001" min="0" max="1000000000" class="form-control border border-info" name="adv"id="adv" required>
+      </div>
+      <div class="col-md-3 mx-4">
+        <label  class="form-label me-auto my-3">HSD Advance</label>
+          <input type="number" step="0.001" min="0" max="1000000000" class="form-control border border-info" name="hsdadv" id="hsdadv" required>
+      </div>
+      <div class="col-md-3 mx-4">
+        <label  class="form-label me-auto my-3">Remarks</label>
+          <input type="text" class="form-control border border-info" name="remarks"id="remarks" required>
+      </div>
+      
+      <div class="col-md-3">
+        <label for="to" class="form-label me-auto my-3">HSD Litre</label>
+          <input type="number" step="0.001" min="0" max="1000000000" class="form-control border border-info" name="hsdliter" id="hsdliter" required>
+      </div>
       </div>
       <div class="col-12">
         <button class="btn btn-dark d-grid gap-2 col-3 mx-auto my-3" type="submit" name="submit" value="submit">Submit</button>
@@ -41,28 +67,57 @@
       </div>
       
     </form>
+    <div class="row g-4">
 
-        <div class="d-grid gap-2 col-6 mx-auto my-6">
-          <form class="container d-grid gap-2 col-6 my-6 mx-auto" action="/searchs " {{ url_for ('test')}} method="POST">
+      <div class="d-grid gap-2 col-3 mx-auto my-4">
+ 
+        <button class="btn btn-danger d-grid gap-2 col-6 mx-auto" type="submit" name="back" onclick="location.href='/party';" >Back</button>
+    
+      </div>
+
+      <div class="col-md-3 mx-4">
+        
+          <form class="d-grid gap-2 col-7 mx-auto" action="/searchs " {{ url_for ('test')}} method="POST">
 
             <button class="btn btn-success d-grid gap-2 col-6 mx-auto" type="submit" name="search" value="search" >Search</button>
           
           </form>
           
         </div>
+        <div class="col-md-3 mx-4">
+        
+          <form class="d-grid gap-2 col-7 mx-auto" action="/back " {{ url_for ('test')}} method="POST">
 
-  <div class="container my-4 row justify-content-justify">
+            <button class="btn btn-success d-grid gap-2 col-6 mx-auto" type="submit" name="back" value="back" >back</button>
+          
+          </form>
+          
+        </div>
+
+        <div class="d-grid gap-2 col-3 mx-auto my-4">
+ 
+          <button class="btn btn-danger d-grid gap-2 col-6 mx-auto" type="submit" name="back" onclick="location.href='/excel';" >SAVE IN EXCEL</button>
+      
+        </div>
+</div>
+  <div class="container my-5">
     <h3>ENTRIES</h3>  
     <table class="table">
       <thead>
         <tr>
+          <th scope="col">PARTY</th>
           <th scope="col">Sl.No.</th>
           <th scope="col">DATE</th>
           <th scope="col">TRUCK NO.</th>
-          <th scope="col">FROM</th>
-          <th scope="col">TO</th>
+          <th scope="col">C. WEIGHT</th>
+          <th scope="col">R. WEIGHT</th>   
+          <th scope="col">SHORTAGE</th>
+          <th scope="col">RATE</th>
           <th scope="col">AMOUNT</th>
           <th scope="col">ADVANCE</th>
+          <th scope="col">H.S.D. ADV.</th>
+          <th scope="col">REMARKS</th>
+          <th scope="col">HSD LITRE</th>
           <th scope="col">BALANCE</th>
           
         </tr>
@@ -70,16 +125,22 @@
       <tbody>
         {% for entries in allentries %}
         <tr>
+          <td>{{entries.party}}</td>
           <th scope="row">{{loop.index}}</th>
           <td>{{entries.date_created}}</td>
           <td>{{entries.truckno}}</td>
-          <td>{{entries.fromm}}</td>
-          <td>{{entries.to}}</td>
+          <td>{{entries.cweight}}</td>
+          <td>{{entries.rweight}}</td>
+          <td>{{entries.shortw}}</td>
+          <td>{{entries.rate}}</td>
           <td>{{entries.amt}}</td>
           <td>{{entries.adv}}</td>
+          <td>{{entries.hsdadv}}</td>
+          <td>{{entries.remarks}}</td>
+          <td>{{entries.hsdliter}}</td>
           <td>{{entries.bal}}</td>
           <td>
-            <a href="/update/{{entries.sno}}" type="button" class="btn btn-success btn-sm mx-1">Update</button>
+            <a href="/update/{{entries.sno}}" type="button" class="btn btn-success btn-sm mx-2">Update</button>
             
           
           </td>

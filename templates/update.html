@@ -4,32 +4,50 @@
 <h1>UPDATE</h1>
     <form class="row g-4" action="/update/{{entries.sno}}" method="POST">
 
-      <div class="col-md-3 mx-3">
-        <label for="truckno" class="form-label me-auto my-3">Truck Number</label>
-          <input type="text" class="form-control" name="truckno" id="truckno" value={{entries.truckno}} required> 
-      </div>
-      <div class="col-md-3">
-        <label for="fromm" class="form-label me-auto my-3">From</label>
-          <input type="text" class="form-control" name="fromm"id="fromm" value={{entries.fromm}} required>
-      </div>
-      <div class="col-md-3">
-        <label for="to" class="form-label me-auto my-3">To</label>
-          <input type="text" class="form-control" name="to" id="to" value={{entries.to}} required>
-      </div>
-      <div class="col-md-3 mx-3">
-        <label for="amt" class="form-label me-auto my-3">Amount</label>
-          <input type="number" class="form-control" name="amt" id="amt" value={{entries.amt}} required>
-      </div>
-      <div class="col-md-3">
-        <label for="adv" class="form-label me-auto my-3" >Advance</label>
-          <input type="number" class="form-control" name="adv" id="adv" value={{entries.adv}} required >
+      
+      <div class="col-md-3 mx-4">
         
+        <label for="date" class="form-label me-auto my-3">Date</label>
+        
+          <input type="date" class="form-control border border-info" name="date_created" id="date_created" required> 
       </div>
       <div class="col-md-3">
-        <label for="validationDefault05" class="form-label me-auto my-3">Weight</label>
-        <input type="number" class="form-control" id="validationDefault05" value={{entries.weight}} required>
+        
+        <label for="truckno" class="form-label me-auto my-3">Truck Number</label>
+        
+          <input type="text" class="form-control border border-info" name="truckno" id="truckno" value={{entries.truckno}} required> 
+      </div>
+      <div class="col-md-3">
+        <label  class="form-label me-auto my-3">C. Weight</label>
+          <input type="number" step="0.001" min="0" max="1000000000" class="form-control border border-info" name="cweight"id="cweight" value={{entries.cweight}} required>
       </div>
       
+      <div class="col-md-3">
+        <label  class="form-label me-auto my-3">R. Weight</label>
+          <input type="number" step="0.001" min="0" max="1000000000" class="form-control border border-info" name="rweight"id="rweight" value={{entries.rweight}} required>
+      </div>
+      
+      <div class="col-md-3 mx-4">
+        <label  class="form-label me-auto my-3">Rate</label>
+          <input type="number" step="0.001" min="0" max="1000000000" class="form-control border border-info" name="rate"id="rate" value={{entries.rate}} required>
+      </div>
+      <div class="col-md-3">
+        <label  class="form-label me-auto my-3">Advance</label>
+          <input type="number" step="0.001"  min="0" max="1000000000" class="form-control border border-info" name="adv"id="adv" value={{entries.adv}} required>
+      </div>
+      <div class="col-md-3 mx-4">
+        <label  class="form-label me-auto my-3">HSD Advance</label>
+          <input type="number" step="0.001" min="0" max="1000000000" class="form-control border border-info" name="hsdadv" id="hsdadv" value={{entries.hsdadv}} required>
+      </div>
+      <div class="col-md-3 mx-4">
+        <label  class="form-label me-auto my-3">Remarks</label>
+          <input type="text" class="form-control border border-info" name="remarks"id="remarks" value={{entries.remarks}} required>
+      </div>
+      
+      <div class="col-md-3">
+        <label for="to" class="form-label me-auto my-3">HSD Litre</label>
+          <input type="number" step="0.001" min="0" max="1000000000" class="form-control border border-info" name="hsdliter" id="hsdliter" value={{entries.hsdliter}} required>
+      </div>
       </div>
       <div class="col-12">
         <button class="btn btn-primary mx-4 my-2" type="submit">Update</button>

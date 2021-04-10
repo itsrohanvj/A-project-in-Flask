@@ -1,11 +1,20 @@
 {% extends 'base.html' %}
 
 {% block body %}
- <h1 >EXCEL UPDATED</h1>
+ 
 
  <div class="d-grid gap-2 col-3 mx-auto my-4">
- 
-    <button class="btn btn-danger d-grid gap-2 col-6 mx-auto" type="submit" name="back" onclick="location.href='/party';" >Back</button>
+  <h1 >EXCEL UPDATED</h1>
+    
+ <p>
+<h2>TOTAL ENTRIES: {{rowcount}}</h2></p>
+<p>
+    <a href="../static/Entries_11.xlsx" download><h2 >Download Entries-1</h2></a>
+    <a href="../static/Entries_22.xlsx" download><h2 >Download Entries-2</h2></a>
+    <a href="../static/Entries_33.xlsx" download><h2 >Download Entries-3</h2></a>
+    <a href="../static/Entries_44.xlsx" download><h2 >Download Entries-4</h2></a>
+</p>
 
+<button class="btn btn-danger d-grid gap-2 col-6 mx-auto" type="submit" name="back" onclick=" location.href='/party';" >Back</button>
   </div>
 {% endblock body %}

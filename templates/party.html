@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<script>
+  if ( window.history.replaceState ) {
+      window.history.replaceState( null, null, window.location.href );
+  }
+</script>
+<meta http-equiv='cache-control' content='no-cache'>
+<meta http-equiv='expires' content='0'>
+<meta http-equiv='pragma' content='no-cache'>
+
+<form action="/party" method="POST">
+<div class="container">
+    <div class="row">
+        
+      <div class="col-6 col-sm-4">
+          
+        <button class="btn btn-dark d-grid gap-2 col-3 mx-auto my-3" type="submit" name="submit" value="1">PARTY 1</button>
+       
+  
+      </div>
+      <div class="col-6 col-sm-4">
+        <button class="btn btn-dark d-grid gap-2 col-3 mx-auto my-3" type="submit" name="submit" value="2">PARTY 2</button>
+       
+
+      </div>
+      <div class="col-6 col-sm-4">
+        <button class="btn btn-dark d-grid gap-2 col-3 mx-auto my-3" type="submit" name="submit" value="3">PARTY 3</button>
+
+      </div>
+      <!-- Force next columns to break to new line at md breakpoint and up -->
+      <div class="w-100 d-none d-md-block"></div>
+  
+      <div class="col-6 col-sm-4">
+        <button class="btn btn-dark d-grid gap-2 col-3 mx-auto my-3" type="submit" name="submit" value="4">PARTY 4</button>
+      </div>
+      <div class="col-6 col-sm-4">
+        <button class="btn btn-dark d-grid gap-2 col-3 mx-auto my-3" type="submit" name="submit" value="5">PARTY 5</button>
+      </div>
+      <div class="col-6 col-sm-4">
+        <button class="btn btn-dark d-grid gap-2 col-3 mx-auto my-3" type="submit" name="submit" value="6">PARTY 6</button>
+
+      </div>
+      <div class="w-100 d-none d-md-block"></div>
+      
+      <div class="col-6 col-sm-4">
+        <button class="btn btn-dark d-grid gap-2 col-3 mx-auto my-3" type="submit" name="submit" value="7">PARTY 7</button>
+      </div>
+      <div class="col-6 col-sm-4">
+        <button class="btn btn-dark d-grid gap-2 col-3 mx-auto my-3" type="submit" name="submit" value="8">PARTY 8</button>
+      </div>
+      <div class="col-6 col-sm-4">
+        <button class="btn btn-dark d-grid gap-2 col-3 mx-auto my-3" type="submit" name="submit" value="9">PARTY 9</button>
+
+      </div>
+      <div class="w-100 d-none d-md-block"></div>
+      
+      <div class="col-6 col-sm-4">
+        <button class="btn btn-dark d-grid gap-2 col-3 mx-auto my-3" type="submit" name="submit" value="10">PARTY 10</button>
+      </div>
+      <div class="col-6 col-sm-4">
+        <button class="btn btn-danger d-grid gap-2 col-3 mx-auto my-3" type="submit" name="submit" value="999">MISC </button>
+      </div>
+      <div class="col-6 col-sm-4">
+        <button class="btn btn-dark d-grid gap-2 col-3 mx-auto my-3" type="submit" name="submit" value="12">Submit</button>
+      </div>
+      <div class="w-100 d-none d-md-block"></div>
+      
+      <div class="col-6 col-sm-4">
+        <button class="btn btn-dark d-grid gap-2 col-3 mx-auto my-3" type="submit" name="submit" value="13">Submit</button>
+      </div>
+      <div class="col-6 col-sm-4">
+        <button class="btn btn-dark d-grid gap-2 col-3 mx-auto my-3" type="submit" name="submit" value="14">Submit</button>
+      </div>
+      <div class="col-6 col-sm-4">
+        <button class="btn btn-dark d-grid gap-2 col-3 mx-auto my-3" type="submit" name="submit" value="15">Submit</button>
+      </div>
+
+    
+    </div>
+  </div>
+</form>
+{% endblock body %}
+    

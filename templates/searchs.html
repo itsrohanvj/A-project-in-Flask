@@ -21,13 +21,19 @@
     <table class="table">
       <thead>
         <tr>
+          <th scope="col">PARTY</th>
           <th scope="col">Sl.No.</th>
           <th scope="col">DATE</th>
           <th scope="col">TRUCK NO.</th>
-          <th scope="col">FROM</th>
-          <th scope="col">TO</th>
+          <th scope="col">C. WEIGHT</th>
+          <th scope="col">R. WEIGHT</th>
+          <th scope="col">SHORTAGE</th>
+          <th scope="col">RATE</th>
           <th scope="col">AMOUNT</th>
           <th scope="col">ADVANCE</th>
+          <th scope="col">H.S.D. ADV.</th>
+          <th scope="col">REMARKS</th>
+          <th scope="col">HSD LITRE</th>
           <th scope="col">BALANCE</th>
           
         </tr>
@@ -35,13 +41,19 @@
       <tbody>
         {% for entries in allentries %}
         <tr>
+          <td>{{entries.party}}</td>
           <th scope="row">{{loop.index}}</th>
           <td>{{entries.date_created}}</td>
           <td>{{entries.truckno}}</td>
-          <td>{{entries.fromm}}</td>
-          <td>{{entries.to}}</td>
+          <td>{{entries.cweight}}</td>
+          <td>{{entries.rweight}}</td>
+          <td>{{entries.shortw}}</td>
+          <td>{{entries.rate}}</td>
           <td>{{entries.amt}}</td>
           <td>{{entries.adv}}</td>
+          <td>{{entries.hsdadv}}</td>
+          <td>{{entries.remarks}}</td>
+          <td>{{entries.hsdliter}}</td>
           <td>{{entries.bal}}</td>
   
         </tr>
